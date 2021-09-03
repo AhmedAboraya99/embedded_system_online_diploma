@@ -14,7 +14,7 @@ SECTIONS
 		 *(.rodata)
 		 _E_text = . ;
 
-	  }> sram AT> flash
+	  }> flash
 	.data :
 	   {
 		 _S_DATA = . ;
