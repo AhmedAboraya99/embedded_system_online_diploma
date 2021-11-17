@@ -80,7 +80,7 @@ uint8_t Get_CRLH_Position(uint16_t PINNumber)
 void  MCAL_GPIO_init (GPIO_TypeDef* GPIOx ,GPIO_PinConfig_t* PINConfig){
 
 	volatile uint32_t *Config_Reg = NULL;
-	uint32_t PIN = 0;
+	uint8_t PIN = 0;
 
 	//Port configuration register low (GPIOx_CRL) configure pins 0 -> 7
 	//Port configuration register high (GPIOx_CRH)  configure pins 8 -> 15
@@ -89,14 +89,14 @@ void  MCAL_GPIO_init (GPIO_TypeDef* GPIOx ,GPIO_PinConfig_t* PINConfig){
 	//clear CNF[1:0] & MODE[1:0]
 	(*Config_Reg) &= ~(0x0F << Get_CRLH_Position(PINConfig->GPIO_PINNumber));
 	// GPIO PIN mode is output
-	if (PINConfig -> GPIO_Mode ==( GPIO_Mode_OUT_PP || GPIO_Mode_OUT_OD||GPIO_Mode_AF_OUT_PP||GPIO_Mode_AF_OUT_OD))
+	if ((PINConfig->GPIO_Mode == GPIO_Mode_AF_OUT_OD) || (PINConfig->GPIO_Mode == GPIO_Mode_AF_OUT_PP) || (PINConfig->GPIO_Mode == GPIO_Mode_OUT_OD) || (PINConfig->GPIO_Mode == GPIO_Mode_OUT_PP))
 	{
 		PIN = (((PINConfig -> GPIO_Mode - 4 )<< 2 ) | (PINConfig -> GPIO_Speed )) & 0x0F;
 	}
 
 	else {
 		//GPIO PIN Mode is input / Analog
-		if (PINConfig -> GPIO_Mode == ( GPIO_Mode_IN_Float||GPIO_Mode_AF_IN || GPIO_Mode_Analog))
+		if ((PINConfig->GPIO_Mode == GPIO_Mode_IN_Float) ||  (PINConfig->GPIO_Mode == GPIO_Mode_Analog))
 			{
 				PIN = ((PINConfig -> GPIO_Mode << 2 ) &0x0F) ;
 			}

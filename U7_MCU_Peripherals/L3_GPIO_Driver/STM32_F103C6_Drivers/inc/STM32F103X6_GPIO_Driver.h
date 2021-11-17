@@ -49,10 +49,10 @@ typedef struct {
 #define GPIO_Mode_IN_PU					0x00000002U
 #define GPIO_Mode_IN_PD					0x00000003U
 #define GPIO_Mode_OUT_PP				0x00000004U
-#define GPIO_Mode_OUT_OD				0x00000006U
-#define GPIO_Mode_AF_OUT_PP				0x00000007U
-#define GPIO_Mode_AF_OUT_OD				0x00000008U
-#define GPIO_Mode_AF_IN					0x00000009U
+#define GPIO_Mode_OUT_OD				0x00000005U
+#define GPIO_Mode_AF_OUT_PP				0x00000006U
+#define GPIO_Mode_AF_OUT_OD				0x00000007U
+#define GPIO_Mode_AF_IN					0x00000008U
 
 
 /*@ref GPIO_Speed_define
@@ -78,7 +78,7 @@ typedef struct {
  * 8 : Alternate function Input
 */
 
-#define GPIO_PIN0			 	((uint16_t)0x0000)
+#define GPIO_PIN0			 	((uint16_t)0x0001)
 #define GPIO_PIN1				((uint16_t)0x0002)
 #define GPIO_PIN2				((uint16_t)0x0004)
 #define GPIO_PIN3				((uint16_t)0x0008)

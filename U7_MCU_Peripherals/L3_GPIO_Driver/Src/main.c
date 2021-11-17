@@ -103,6 +103,6 @@ int main(void)
 			MCAL_GPIO_TogglePIN(GPIOB,GPIO_PIN13);
 
 		}
-		WAIT_ms(2);	//delay
+		WAIT_ms(30);	//delay
 	}
 }

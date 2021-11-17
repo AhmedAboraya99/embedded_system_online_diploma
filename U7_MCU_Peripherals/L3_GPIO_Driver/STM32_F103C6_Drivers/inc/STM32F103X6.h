@@ -141,7 +141,8 @@ RCC_TypeDef *RCC   = 	(RCC_TypeDef *)   RCC_Base;
 #define RCC_GPIOA_CLOCK_EN() 	(RCC->APB2ENR |= 1<<2)
 #define RCC_GPIOB_CLOCK_EN() 	(RCC->APB2ENR |= 1<<3)
 #define RCC_GPIOC_CLOCK_EN() 	(RCC->APB2ENR |= 1<<4)
-#define RCC_GPIOE_CLOCK_EN() 	(RCC->APB2ENR |= 1<<5)
+#define RCC_GPIOD_CLOCK_EN() 	(RCC->APB2ENR |= 1<<5)
+#define RCC_GPIOE_CLOCK_EN() 	(RCC->APB2ENR |= 1<<6)
 
 #define RCC_AFIO_CLOCK_EN() 	(RCC->APB2ENR |= 1<<0)
 

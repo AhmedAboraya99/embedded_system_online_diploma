@@ -45,8 +45,8 @@ GPIO_Driver_STM32F103C6.bin \
 all: GPIO_Driver_STM32F103C6.elf secondary-outputs
 
 # Tool invocations
-GPIO_Driver_STM32F103C6.elf: $(OBJS) $(USER_OBJS) E:\Work\Embedded\ systems\Diploma\embedded_system_online_diploma\U7_MCU_Peripherals\L2_GPIO_Driver\STM32F103C6TX_FLASH.ld
-	arm-none-eabi-gcc -gdwarf-2 -o "GPIO_Driver_STM32F103C6.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m3 -T"E:\Work\Embedded systems\Diploma\embedded_system_online_diploma\U7_MCU_Peripherals\L2_GPIO_Driver\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="GPIO_Driver_STM32F103C6.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+GPIO_Driver_STM32F103C6.elf: $(OBJS) $(USER_OBJS) E:\Work\Embedded\ systems\Diploma\embedded_system_online_diploma\U7_MCU_Peripherals\L3_GPIO_Driver\STM32F103C6TX_FLASH.ld
+	arm-none-eabi-gcc -gdwarf-2 -o "GPIO_Driver_STM32F103C6.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m3 -T"E:\Work\Embedded systems\Diploma\embedded_system_online_diploma\U7_MCU_Peripherals\L3_GPIO_Driver\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="GPIO_Driver_STM32F103C6.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 
