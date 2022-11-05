@@ -5,6 +5,13 @@
 
 #include "STM32F103X6_GPIO_Driver.h"
 
+void WAIT_ms(uint32_t t){
+	uint32_t i,j;
+	for(i=0;i<t;i++){
+		for(j=0;j<255;j++);
+	}
+}
+
 //assisted functions
 uint8_t Get_CRLH_Position(uint16_t PINNumber)
 {
@@ -238,7 +245,7 @@ void MCAL_GPIO_WritePIN (GPIO_TypeDef* GPIOx ,uint16_t PIN_Number,uint8_t value 
  * Note 		-None
  */
 
-void MCAL_GPIO_WritePort (GPIO_TypeDef* GPIOx, uint8_t value ){
+void MCAL_GPIO_WritePort (GPIO_TypeDef* GPIOx, uint16_t value ){
 
 	GPIOx->ODR = (uint32_t) value;
 }

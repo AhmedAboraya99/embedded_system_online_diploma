@@ -117,7 +117,7 @@ uint16_t MCAL_GPIO_ReadPort (GPIO_TypeDef* GPIOx );
 
 //Write APIs
 void MCAL_GPIO_WritePIN (GPIO_TypeDef* GPIOx ,uint16_t PIN_Number,uint8_t value );
-void MCAL_GPIO_WritePort (GPIO_TypeDef* GPIOx, uint8_t value );
+void MCAL_GPIO_WritePort (GPIO_TypeDef* GPIOx, uint16_t value );
 
 void  MCAL_GPIO_TogglePIN (GPIO_TypeDef* GPIOx ,uint16_t PIN_Number);
 

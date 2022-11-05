@@ -25,16 +25,10 @@
 #include "STM32F103x6.h"
 #include "STM32F103x6_EXTI_Driver.c"
 #include "LCD.c"
-#include "Keypad.c"
 
-uint8_t IRQ_Flag;
+
+uint8_t IRQ_Flag = 0;
 //Generic Functions
-void WAIT_ms(uint32_t t){
-	uint32_t i,j;
-	for(i=0;i<t;i++){
-		for(j=0;j<255;j++);
-	}
-}
 
 void clock_init(){
 	//Enable ABP2 clock register
@@ -49,7 +43,7 @@ void clock_init(){
 void IRQ9_CallBack(void){
 	LCD_clear_screen();
 	IRQ_Flag = 1;
-	LCD_WRITE_STRING("Attention!! EXTI9 happened ");
+	LCD_WRITE_STRING("EXTI9 happened!!");
 	WAIT_ms(1000);
 
 }
@@ -59,8 +53,7 @@ int main(void)
 {
 	clock_init();
 	LCD_INIT();
-	Keypad_init();
-	WAIT_ms(50);
+
 	//Configure an External interrupt request of line 9 on PORT B pin 9
 	EXTI_pinConfig_t EXTI_Config;
 	EXTI_Config.EXTI_Pin = EXTI9PB9 ;
@@ -68,7 +61,6 @@ int main(void)
 	EXTI_Config.P_IRQ_CallBack = IRQ9_CallBack;
 	EXTI_Config.IRQ_EN = EXTI_IRQ_ENABLE;
 	MCAL_EXTI_init(&EXTI_Config);
-
 	IRQ_Flag = 1;
     /* Loop forever */
 	while(1){

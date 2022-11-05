@@ -176,8 +176,8 @@ typedef struct {
 #define  EXTI_Trigger_ANYCHANGE						2
 
 //@ref EXTI_IRQ_EN_define
-#define  EXTI_IRQ_ENABLE							0
-#define  EXTI_IRQ_DISABLE							1
+#define  EXTI_IRQ_DISABLE							0
+#define  EXTI_IRQ_ENABLE							1
 
 
 

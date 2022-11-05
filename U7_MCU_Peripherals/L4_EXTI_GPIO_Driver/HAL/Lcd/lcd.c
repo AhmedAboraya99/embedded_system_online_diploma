@@ -53,6 +53,10 @@ void LCD_GPIO_INIT(){
 	lcd_pinconfig.GPIO_Speed = GPIO_Speed_10MHZ;
 	MCAL_GPIO_init (LCD_CTRL,&lcd_pinconfig);
 
+	MCAL_GPIO_WritePIN(LCD_CTRL ,EN_SWITCH,GPIO_PIN_RESET);
+	MCAL_GPIO_WritePIN(LCD_CTRL ,RS_SWITCH,GPIO_PIN_RESET);
+	MCAL_GPIO_WritePIN(LCD_CTRL ,RW_SWITCH,GPIO_PIN_RESET);
+
 	/************************************************************/
 
 	//MODE&CNF: init GPIOA PIN(0-7) as as push-pull outputs with 10MHZ speed
@@ -85,7 +89,7 @@ void LCD_GPIO_INIT(){
 	lcd_pinconfig.GPIO_PINNumber = GPIO_PIN5;
 	lcd_pinconfig.GPIO_Mode = GPIO_Mode_OUT_PP;
 	lcd_pinconfig.GPIO_Speed = GPIO_Speed_10MHZ;
-	MCAL_GPIO_init (GPIOA,&lcd_pinconfig);
+	MCAL_GPIO_init (LCD_PORT,&lcd_pinconfig);
 
 	lcd_pinconfig.GPIO_PINNumber = GPIO_PIN6;
 	lcd_pinconfig.GPIO_Mode = GPIO_Mode_OUT_PP;
@@ -97,9 +101,7 @@ void LCD_GPIO_INIT(){
 	lcd_pinconfig.GPIO_Speed = GPIO_Speed_10MHZ;
 	MCAL_GPIO_init (LCD_PORT,&lcd_pinconfig);
 
-	MCAL_GPIO_WritePIN(LCD_CTRL ,EN_SWITCH,GPIO_PIN_RESET);
-	MCAL_GPIO_WritePIN(LCD_CTRL ,RS_SWITCH,GPIO_PIN_RESET);
-	MCAL_GPIO_WritePIN(LCD_CTRL ,RW_SWITCH,GPIO_PIN_RESET);
+
 }
 
 void LCD_INIT(){
@@ -167,6 +169,48 @@ void LCD_check_lcd_isbusy(){
 	MCAL_GPIO_WritePIN(LCD_CTRL ,RW_SWITCH,GPIO_PIN_SET);
 	MCAL_GPIO_WritePIN(LCD_CTRL ,RS_SWITCH,GPIO_PIN_RESET);
 	LCD_lcd_kick();
+	//MODE&CNF: init GPIOA PIN(0-7) as as push-pull outputs with 10MHZ speed
+	lcd_pinconfig.GPIO_PINNumber = GPIO_PIN0;
+	lcd_pinconfig.GPIO_Mode = GPIO_Mode_OUT_PP;
+	lcd_pinconfig.GPIO_Speed = GPIO_Speed_10MHZ;
+	MCAL_GPIO_init (LCD_PORT,&lcd_pinconfig);
+
+	lcd_pinconfig.GPIO_PINNumber = GPIO_PIN1;
+	lcd_pinconfig.GPIO_Mode = GPIO_Mode_OUT_PP;
+	lcd_pinconfig.GPIO_Speed = GPIO_Speed_10MHZ;
+	MCAL_GPIO_init (LCD_PORT,&lcd_pinconfig);
+
+	lcd_pinconfig.GPIO_PINNumber = GPIO_PIN2;
+	lcd_pinconfig.GPIO_Mode = GPIO_Mode_OUT_PP;
+	lcd_pinconfig.GPIO_Speed = GPIO_Speed_10MHZ;
+	MCAL_GPIO_init (LCD_PORT,&lcd_pinconfig);
+
+
+	lcd_pinconfig.GPIO_PINNumber = GPIO_PIN3;
+	lcd_pinconfig.GPIO_Mode = GPIO_Mode_OUT_PP;
+	lcd_pinconfig.GPIO_Speed = GPIO_Speed_10MHZ;
+	MCAL_GPIO_init (LCD_PORT,&lcd_pinconfig);
+
+	lcd_pinconfig.GPIO_PINNumber = GPIO_PIN4;
+	lcd_pinconfig.GPIO_Mode = GPIO_Mode_OUT_PP;
+	lcd_pinconfig.GPIO_Speed = GPIO_Speed_10MHZ;
+	MCAL_GPIO_init (LCD_PORT,&lcd_pinconfig);
+
+	lcd_pinconfig.GPIO_PINNumber = GPIO_PIN5;
+	lcd_pinconfig.GPIO_Mode = GPIO_Mode_OUT_PP;
+	lcd_pinconfig.GPIO_Speed = GPIO_Speed_10MHZ;
+	MCAL_GPIO_init (LCD_PORT,&lcd_pinconfig);
+
+	lcd_pinconfig.GPIO_PINNumber = GPIO_PIN6;
+	lcd_pinconfig.GPIO_Mode = GPIO_Mode_OUT_PP;
+	lcd_pinconfig.GPIO_Speed = GPIO_Speed_10MHZ;
+	MCAL_GPIO_init (LCD_PORT,&lcd_pinconfig);
+
+	lcd_pinconfig.GPIO_PINNumber = GPIO_PIN7;
+	lcd_pinconfig.GPIO_Mode = GPIO_Mode_OUT_PP;
+	lcd_pinconfig.GPIO_Speed = GPIO_Speed_10MHZ;
+	MCAL_GPIO_init (LCD_PORT,&lcd_pinconfig);
+
 	MCAL_GPIO_WritePIN(LCD_CTRL ,RW_SWITCH,GPIO_PIN_RESET);
 	
 }
@@ -175,9 +219,9 @@ void LCD_check_lcd_isbusy(){
 void LCD_WRITE_COMMAND(unsigned char command){
 	#ifdef EIGHT_BIT_MODE
 		LCD_check_lcd_isbusy();
-		MCAL_GPIO_WritePort(LCD_PORT ,command);
-		MCAL_GPIO_WritePIN(LCD_CTRL ,RW_SWITCH,GPIO_PIN_RESET);
-		MCAL_GPIO_WritePIN(LCD_CTRL ,RS_SWITCH,GPIO_PIN_RESET);
+		MCAL_GPIO_WritePort(LCD_PORT, command);
+		MCAL_GPIO_WritePIN(LCD_CTRL, RW_SWITCH, GPIO_PIN_RESET);
+		MCAL_GPIO_WritePIN(LCD_CTRL, RS_SWITCH, GPIO_PIN_RESET);
 		WAIT_ms(1);
 		LCD_lcd_kick();
 	#endif

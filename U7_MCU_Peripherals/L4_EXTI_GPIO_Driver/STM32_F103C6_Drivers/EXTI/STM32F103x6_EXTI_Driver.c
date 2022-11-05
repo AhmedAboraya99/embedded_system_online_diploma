@@ -7,10 +7,10 @@
 //====================
 //Generic Macros
 //====================
-#define AFIO_GPIO_EXTI_Mapping(x) 		(	(x=GPIOA)?0 :\
-											(x=GPIOB)?1 :\
-											(x=GPIOC)?2 :\
-											(x=GPIOD)?3 :0)
+#define AFIO_GPIO_EXTI_Mapping(x) 		(	(x==GPIOA)?0 :\
+											(x==GPIOB)?1 :\
+											(x==GPIOC)?2 :\
+											(x==GPIOD)?3 :0)
 
 //====================
 //Generic Variables
@@ -104,8 +104,8 @@ void Update_EXTI(EXTI_pinConfig_t* EXTIConfig)
 	pinconfig.GPIO_Mode = GPIO_Mode_IN_Float;
 	MCAL_GPIO_init (EXTIConfig -> EXTI_Pin.GPIO_Port,&pinconfig);
 	//update AFIO routing to EXTI line with port A, B, C , D
-	uint8_t	AFIO_EXTICR_Index = EXTIConfig->EXTI_Pin.EXTI_LineNumber / 4 ;
-	uint8_t	AFIO_EXTICR_Position = (EXTIConfig->EXTI_Pin.EXTI_LineNumber % 4) * 4;
+	uint8_t	AFIO_EXTICR_Index = (EXTIConfig->EXTI_Pin.EXTI_LineNumber) / 4 ;
+	uint8_t	AFIO_EXTICR_Position = ((EXTIConfig->EXTI_Pin.EXTI_LineNumber) % 4) * 4;
 
 	//reset and set AFIO_EXTICR to select the source input for EXTIx external interrupt
 	AFIO->EXTICR[AFIO_EXTICR_Index] &= ~(0xF<<AFIO_EXTICR_Position);
@@ -141,6 +141,7 @@ void Update_EXTI(EXTI_pinConfig_t* EXTIConfig)
 		EXTI ->IMR &= ~(1<<EXTIConfig->EXTI_Pin.EXTI_LineNumber);
 		Disable_NVIC(EXTIConfig->EXTI_Pin.EXTI_LineNumber);
 	}
+
 }
 
 //APIs
