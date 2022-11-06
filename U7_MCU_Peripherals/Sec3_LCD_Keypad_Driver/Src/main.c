@@ -126,7 +126,7 @@ int main(void)
 			default:
 
 				//store Two Number to be calculated
-				if ((key_pressed == ('+' || '-' || '*' || '/')&& (flag == 0)))
+				if ((key_pressed == ('+' || '-' || '*' || '/'))&& (flag == 0))
 				{
 					LCD_WRITE_CHAR(key_pressed);
 					flag = 1;
