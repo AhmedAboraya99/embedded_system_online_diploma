@@ -1,10 +1,9 @@
 /*
  * lcd.c
  *
- * Created: 4/22/2021 3:01:11 PM
- *  Author: Marco
+ * Created: 9/5/2021 4:22:17 PM
+ *  Author: Ahmed Aboraya
  */ 
-
 #include "lcd.h"
 
 
