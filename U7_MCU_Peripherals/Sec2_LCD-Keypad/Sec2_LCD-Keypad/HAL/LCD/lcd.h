@@ -5,7 +5,6 @@
  *  Author: Ahmed Aboraya
  */ 
 
-
 #ifndef LCD_H_
 #define LCD_H_
 //-----------------------------
@@ -17,11 +16,14 @@
 
 
 
-#define LCD_PORT			DIOA
+#define LCD_DIO				DIOA
+#define LCD_PORT			PORTA
 #define DataDir_LCD_PORT	DDRA
-#define LCD_CTRL			DIOB
 
+#define LCD_CTRL			DIOB
+#define LCD_CTRL_PORT		PORTB
 #define DataDir_LCD_CTRL	DDRB
+
 #define EN_SWITCH			DIO_PIN3
 #define RW_SWITCH			DIO_PIN2
 #define RS_SWITCH			DIO_PIN1
@@ -29,8 +31,8 @@
 #define DATA_shift  4 // in 8 bit mode 0 and in 4 bit mode 4
 
 //LCD Mode Select
-#define EIGHT_BIT_MODE
-//#define FOUR_BIT_MODE
+//#define EIGHT_BIT_MODE
+#define FOUR_BIT_MODE
 
 #define LCD_FUNCTION_8BIT_1LINE   					(0x30)
 #define LCD_FUNCTION_8BIT_2LINES   					(0x38)
