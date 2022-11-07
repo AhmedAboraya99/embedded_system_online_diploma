@@ -1,5 +1,5 @@
 /*
- * lcd.c
+ * lcd.h
  *
  * Created: 9/5/2021 4:22:04 PM
  *  Author: Ahmed Aboraya
