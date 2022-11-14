@@ -21,7 +21,7 @@
 #define SCK		7
 
 #define DDR_SPI		DDRB
-
+#define DDR_PORT	PORTB
 
 void SPI_SlaveInit(void){
 	DDR_SPI |= (1<<MISO);
@@ -32,9 +32,8 @@ void SPI_SlaveInit(void){
 	/* Set MISO output, all others input */
 
 }
-char SPI_SlaveReceive(char rData){
+char SPI_SlaveReceive(void){
 
-	SPDR = rData;
 	/* Wait for Reception complete */
 	while(! (SPSR & (1<<SPIF)) );
 	
@@ -42,18 +41,30 @@ char SPI_SlaveReceive(char rData){
 	return SPDR;
 
 }
+void SPI_SlaveTransmit(char sData){
+	
+	/* Start transmission */
+	SPDR = sData ;
+	/* Wait for transmission complete */
+	while(! (SPSR&(1<<SPIF)) );
+
+}
 int main(void)
 {
-	char NumData ;
+	uint8_t NumData ;
 	SPI_SlaveInit();
 	DDRA=0XFF;
 	while (1)
 	{
-		for(int i = 10; i >= 0;i-- ){
+		for(uint8_t i = 255; i >= 0;i--){
 			
 			NumData = i;
-			PORTA = SPI_SlaveReceive(NumData);
-			_delay_ms(500);
+			PORTA = SPI_SlaveReceive();
+			_delay_ms(1000);
+			DDR_PORT &= ~1<<SS;
+			SPI_SlaveTransmit(NumData);
+			DDR_PORT &= ~1<<SS;
+			
 			
 		} 
 		

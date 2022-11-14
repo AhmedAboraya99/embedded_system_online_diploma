@@ -21,7 +21,7 @@
 #define SCK		7
 
 #define DDR_SPI		DDRB
-
+#define DDR_PORT	PORTB
 
 void SPI_MasterInit(void){
 	/* Set MOSI and SCK output, all others input */
@@ -30,29 +30,40 @@ void SPI_MasterInit(void){
 	SPCR |= (1<<SPE) | (1<<MSTR) |(1<<SPR0);
 
 }
-char SPI_MasterTransmit(char sData){
+void SPI_MasterTransmit(char sData){
 	
 	/* Start transmission */
 	SPDR = sData ;
 	/* Wait for transmission complete */
 	while(! (SPSR&(1<<SPIF)) );
+
+}
+char SPI_MasterReceive(void){
+
+	/* Wait for Reception complete */
+	while(! (SPSR & (1<<SPIF)) );
 	
+	/* Return Data Register */
 	return SPDR;
+
 }
 int main(void)
 {
-	char NumData ;
+	uint8_t NumData ;
 	SPI_MasterInit();
 	DDRA=0XFF;
 
     while (1) 
     {
 		
-		for(int i = 0; i<= 10;i++ ){
+		for(uint8_t i = 0 ; i<= 255;i++ ){
 			
-			NumData = i;
-			PORTA = SPI_MasterTransmit(NumData);
-			_delay_ms(500);
+			NumData =  i;
+			DDR_PORT &= ~1<<SS;
+			SPI_MasterTransmit(NumData);
+			DDR_PORT |= 1<<SS;
+			PORTA = SPI_MasterReceive();	
+			_delay_ms(1000);
 		}
 		
     }
