@@ -1,0 +1,38 @@
+E:/Work/Embedded systems/Diploma/embedded_system_online_diploma/U8_MCU_Interfacing/L5_SPI_STM32_Driver/Lab2_Two_SPI_STM32/STM32_F103C6_Drivers/SPI\STM32F103CX_SPI_Driver.c:37:7:MCAL_SPI_Init	24	static
+E:/Work/Embedded systems/Diploma/embedded_system_online_diploma/U8_MCU_Interfacing/L5_SPI_STM32_Driver/Lab2_Two_SPI_STM32/STM32_F103C6_Drivers/SPI\STM32F103CX_SPI_Driver.c:117:6:MCAL_SPI_DeInit	16	static
+E:/Work/Embedded systems/Diploma/embedded_system_online_diploma/U8_MCU_Interfacing/L5_SPI_STM32_Driver/Lab2_Two_SPI_STM32/STM32_F103C6_Drivers/SPI\STM32F103CX_SPI_Driver.c:136:7:MCAL_SPI_Send_Data	24	static
+E:/Work/Embedded systems/Diploma/embedded_system_online_diploma/U8_MCU_Interfacing/L5_SPI_STM32_Driver/Lab2_Two_SPI_STM32/STM32_F103C6_Drivers/SPI\STM32F103CX_SPI_Driver.c:155:7:MCAL_SPI_Recieve_Data	24	static
+E:/Work/Embedded systems/Diploma/embedded_system_online_diploma/U8_MCU_Interfacing/L5_SPI_STM32_Driver/Lab2_Two_SPI_STM32/STM32_F103C6_Drivers/SPI\STM32F103CX_SPI_Driver.c:171:6:MCAL_SPI_TX_RX	24	static
+E:/Work/Embedded systems/Diploma/embedded_system_online_diploma/U8_MCU_Interfacing/L5_SPI_STM32_Driver/Lab2_Two_SPI_STM32/STM32_F103C6_Drivers/SPI\STM32F103CX_SPI_Driver.c:192:6:MCAL_SPI_GPIO_Set_Pins	24	static
+E:/Work/Embedded systems/Diploma/embedded_system_online_diploma/U8_MCU_Interfacing/L5_SPI_STM32_Driver/Lab2_Two_SPI_STM32/STM32_F103C6_Drivers/SPI\STM32F103CX_SPI_Driver.c:317:6:SPI1_IRQHandler	16	static
+E:/Work/Embedded systems/Diploma/embedded_system_online_diploma/U8_MCU_Interfacing/L5_SPI_STM32_Driver/Lab2_Two_SPI_STM32/STM32_F103C6_Drivers/SPI\STM32F103CX_SPI_Driver.c:326:6:SPI2_IRQHandler	16	static
+E:/Work/Embedded systems/Diploma/embedded_system_online_diploma/U8_MCU_Interfacing/L5_SPI_STM32_Driver/Lab2_Two_SPI_STM32/STM32_F103C6_Drivers/GPIO\STM32f103X6_GPIO_Driver.c:9:9:Get_CRLH_Position	16	static
+E:/Work/Embedded systems/Diploma/embedded_system_online_diploma/U8_MCU_Interfacing/L5_SPI_STM32_Driver/Lab2_Two_SPI_STM32/STM32_F103C6_Drivers/GPIO\STM32f103X6_GPIO_Driver.c:80:7:MCAL_GPIO_init	32	static
+E:/Work/Embedded systems/Diploma/embedded_system_online_diploma/U8_MCU_Interfacing/L5_SPI_STM32_Driver/Lab2_Two_SPI_STM32/STM32_F103C6_Drivers/GPIO\STM32f103X6_GPIO_Driver.c:130:6:MCAL_GPIO_Deinit	16	static
+E:/Work/Embedded systems/Diploma/embedded_system_online_diploma/U8_MCU_Interfacing/L5_SPI_STM32_Driver/Lab2_Two_SPI_STM32/STM32_F103C6_Drivers/GPIO\STM32f103X6_GPIO_Driver.c:176:6:MCAL_GPIO_SetPIN	32	static
+E:/Work/Embedded systems/Diploma/embedded_system_online_diploma/U8_MCU_Interfacing/L5_SPI_STM32_Driver/Lab2_Two_SPI_STM32/STM32_F103C6_Drivers/GPIO\STM32f103X6_GPIO_Driver.c:227:9:MCAL_GPIO_ReadPIN	24	static
+E:/Work/Embedded systems/Diploma/embedded_system_online_diploma/U8_MCU_Interfacing/L5_SPI_STM32_Driver/Lab2_Two_SPI_STM32/STM32_F103C6_Drivers/GPIO\STM32f103X6_GPIO_Driver.c:250:10:MCAL_GPIO_ReadPort	24	static
+E:/Work/Embedded systems/Diploma/embedded_system_online_diploma/U8_MCU_Interfacing/L5_SPI_STM32_Driver/Lab2_Two_SPI_STM32/STM32_F103C6_Drivers/GPIO\STM32f103X6_GPIO_Driver.c:266:6:MCAL_GPIO_WritePIN	16	static
+E:/Work/Embedded systems/Diploma/embedded_system_online_diploma/U8_MCU_Interfacing/L5_SPI_STM32_Driver/Lab2_Two_SPI_STM32/STM32_F103C6_Drivers/GPIO\STM32f103X6_GPIO_Driver.c:293:6:MCAL_GPIO_WritePort	16	static
+E:/Work/Embedded systems/Diploma/embedded_system_online_diploma/U8_MCU_Interfacing/L5_SPI_STM32_Driver/Lab2_Two_SPI_STM32/STM32_F103C6_Drivers/GPIO\STM32f103X6_GPIO_Driver.c:307:6:MCAL_GPIO_TogglePIN	16	static
+E:/Work/Embedded systems/Diploma/embedded_system_online_diploma/U8_MCU_Interfacing/L5_SPI_STM32_Driver/Lab2_Two_SPI_STM32/STM32_F103C6_Drivers/GPIO\STM32f103X6_GPIO_Driver.c:321:9:MCAL_GPIO_LockPIN	24	static
+E:/Work/Embedded systems/Diploma/embedded_system_online_diploma/U8_MCU_Interfacing/L5_SPI_STM32_Driver/Lab2_Two_SPI_STM32/STM32_F103C6_Drivers/RCC\STM32F103X8_RCC_Driver.c:38:10:MCAL_RCC_GetSYS_CLCKFreq	4	static
+E:/Work/Embedded systems/Diploma/embedded_system_online_diploma/U8_MCU_Interfacing/L5_SPI_STM32_Driver/Lab2_Two_SPI_STM32/STM32_F103C6_Drivers/RCC\STM32F103X8_RCC_Driver.c:64:10:MCAL_RCC_GetHCLCKFreq	8	static
+E:/Work/Embedded systems/Diploma/embedded_system_online_diploma/U8_MCU_Interfacing/L5_SPI_STM32_Driver/Lab2_Two_SPI_STM32/STM32_F103C6_Drivers/RCC\STM32F103X8_RCC_Driver.c:72:10:MCAL_RCC_GetPCLCK1Freq	8	static
+E:/Work/Embedded systems/Diploma/embedded_system_online_diploma/U8_MCU_Interfacing/L5_SPI_STM32_Driver/Lab2_Two_SPI_STM32/STM32_F103C6_Drivers/RCC\STM32F103X8_RCC_Driver.c:79:10:MCAL_RCC_GetPCLCK2Freq	8	static
+E:/Work/Embedded systems/Diploma/embedded_system_online_diploma/U8_MCU_Interfacing/L5_SPI_STM32_Driver/Lab2_Two_SPI_STM32/STM32_F103C6_Drivers/UART\STM32F103x8_UART_Driver.c:15:9:Get_USART_Index	16	static
+E:/Work/Embedded systems/Diploma/embedded_system_online_diploma/U8_MCU_Interfacing/L5_SPI_STM32_Driver/Lab2_Two_SPI_STM32/STM32_F103C6_Drivers/UART\STM32F103x8_UART_Driver.c:36:7:MCAL_USART_init	24	static
+E:/Work/Embedded systems/Diploma/embedded_system_online_diploma/U8_MCU_Interfacing/L5_SPI_STM32_Driver/Lab2_Two_SPI_STM32/STM32_F103C6_Drivers/UART\STM32F103x8_UART_Driver.c:99:6:MCAL_USART_Deinit	16	static
+E:/Work/Embedded systems/Diploma/embedded_system_online_diploma/U8_MCU_Interfacing/L5_SPI_STM32_Driver/Lab2_Two_SPI_STM32/STM32_F103C6_Drivers/UART\STM32F103x8_UART_Driver.c:118:7:MCAL_USART_SendData	32	static
+E:/Work/Embedded systems/Diploma/embedded_system_online_diploma/U8_MCU_Interfacing/L5_SPI_STM32_Driver/Lab2_Two_SPI_STM32/STM32_F103C6_Drivers/UART\STM32F103x8_UART_Driver.c:136:7:MCAL_USART_ReceiveData	32	static
+E:/Work/Embedded systems/Diploma/embedded_system_online_diploma/U8_MCU_Interfacing/L5_SPI_STM32_Driver/Lab2_Two_SPI_STM32/STM32_F103C6_Drivers/UART\STM32F103x8_UART_Driver.c:170:6:MCAL_USART_GPIO_SetPins	24	static
+E:/Work/Embedded systems/Diploma/embedded_system_online_diploma/U8_MCU_Interfacing/L5_SPI_STM32_Driver/Lab2_Two_SPI_STM32/STM32_F103C6_Drivers/UART\STM32F103x8_UART_Driver.c:257:6:USART1_IRQHandler	16	static
+E:/Work/Embedded systems/Diploma/embedded_system_online_diploma/U8_MCU_Interfacing/L5_SPI_STM32_Driver/Lab2_Two_SPI_STM32/STM32_F103C6_Drivers/UART\STM32F103x8_UART_Driver.c:286:6:USART2_IRQHandler	16	static
+E:/Work/Embedded systems/Diploma/embedded_system_online_diploma/U8_MCU_Interfacing/L5_SPI_STM32_Driver/Lab2_Two_SPI_STM32/STM32_F103C6_Drivers/UART\STM32F103x8_UART_Driver.c:314:6:USART3_IRQHandler	16	static
+../Src/main.c:47:6:WAIT_ms	24	static
+../Src/main.c:55:6:clock_init	4	static
+../Src/main.c:72:6:USART_IRQ_CallBack	4	static
+../Src/main.c:86:6:SPI_IRQ_CallBack	16	static
+../Src/main.c:105:6:UART_Config_Init	8	static
+../Src/main.c:128:6:SPI_Config_Init	8	static
+../Src/main.c:176:5:main	8	static
